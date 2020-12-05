@@ -14,21 +14,12 @@ void initIndicatorLeds()
 void ledStartupSequence()
 {
     analogWrite(RED_LED_PIN, 255);
-    delay(200);
+    analogWrite(BLUE_LED_PIN, 255);
+    analogWrite(GREEN_LED_PIN, 255);
+    delay(300);
     analogWrite(RED_LED_PIN, 0);
-    delay(200);
-    analogWrite(BLUE_LED_PIN, 255);
-    delay(200);
     analogWrite(BLUE_LED_PIN, 0);
-    delay(200);
-    analogWrite(GREEN_LED_PIN, 255);
-    delay(200);
     analogWrite(GREEN_LED_PIN, 0);
-    delay(200);
-    analogWrite(BLUE_LED_PIN, 255);
-    analogWrite(GREEN_LED_PIN, 255);
-    analogWrite(RED_LED_PIN, 255);
-    delay(200);
 }
 
 void lightRedLED()
@@ -36,14 +27,29 @@ void lightRedLED()
     analogWrite(RED_LED_PIN, 255);
 }
 
+void killRedLED()
+{
+    digitalWrite(RED_LED_PIN, LOW);
+}
+
 void lightGreenLED()
 {
     analogWrite(GREEN_LED_PIN, 255);
 }
 
+void killGreenLED()
+{
+    digitalWrite(GREEN_LED_PIN, LOW);
+}
+
 void lightBlueLED()
 {
-    analogWrite(BLUE_LED_PIN, 255);
+    digitalWrite(BLUE_LED_PIN, HIGH);
+}
+
+void killBlueLED()
+{
+    digitalWrite(BLUE_LED_PIN, LOW);
 }
 
 void turnOffLED()
